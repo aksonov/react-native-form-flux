@@ -1,0 +1,27 @@
+{
+  "name": "react-native-form-flux",
+  "version": "0.0.1",
+  "description": "React Native Form management using Flux architecture ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aksonov/react-native-form-flux.git"
+  },
+  "keywords": [
+    "react-native",
+    "form",
+    "flux"
+  ],
+  "author": "Pavlo Aksonov <akso.nov@gmail.com> (http://aksonov.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aksonov/react-native-form-flux/issues"
+  },
+  "homepage": "https://github.com/aksonov/react-native-form-flux#readme",
+  "dependencies": {
+    "alt": "^0.17.1"
+  }
+}
