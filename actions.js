@@ -1,5 +1,5 @@
 'use strict';
-var alt = require('./alt');
+var {alt} = require('react-native-router-flux');
 
 class Actions {
     constructor(){

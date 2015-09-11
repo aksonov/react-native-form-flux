@@ -1,6 +1,6 @@
 {
   "name": "react-native-form-flux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React Native Form management using Flux architecture ",
   "main": "index.js",
   "scripts": {
@@ -15,13 +15,24 @@
     "form",
     "flux"
   ],
-  "author": "Pavlo Aksonov <akso.nov@gmail.com> (http://aksonov.com)",
+  "author": {
+    "name": "Pavlo Aksonov",
+    "email": "akso.nov@gmail.com",
+    "url": "http://aksonov.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/aksonov/react-native-form-flux/issues"
   },
   "homepage": "https://github.com/aksonov/react-native-form-flux#readme",
   "dependencies": {
-    "alt": "^0.17.1"
-  }
+    "alt": "^0.17.1",
+    "react-native-router-flux": "^0.1.4"
+  },
+  "readme": "# react-native-form-flux\nUse FLUX events to manage form state and perist it using AsyncStorage.\nAlpha release (in development)",
+  "readmeFilename": "README.md",
+  "gitHead": "a43d6d78c3da0ea5853c4fb950e787d1a843ea2b",
+  "_id": "react-native-form-flux@0.0.1",
+  "_shasum": "67a79eb2e48a109317581bc073ea0d3e51bb8889",
+  "_from": "react-native-form-flux@>=0.0.1 <0.0.2"
 }

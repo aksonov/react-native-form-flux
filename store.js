@@ -1,6 +1,6 @@
 'use strict';
-var alt = require('./alt');
-var actions = require('./actions');
+var {alt, Actions} = require('react-native-router-flux');
+var FormActions = require('./actions');
 var React = require('react-native');
 var {
     AsyncStorage
@@ -8,22 +8,22 @@ var {
 
 var STORAGE_KEY = 'FormStoreKey';
 
-AsyncStorage.getItem(STORAGE_KEY, (error, result)=> actions.load(result));
+AsyncStorage.getItem(STORAGE_KEY, (error, result)=> FormActions.load(result));
 
 class FormStore {
     constructor(){
         this.data = {};
-        this.bindAction(actions.set, this.onSet);
-        this.bindAction(actions.load, this.onLoad);
-        this.bindAction(actions.clear, this.onClear);
+        this.bindAction(FormActions.set, this.onSet);
+        this.bindAction(FormActions.load, this.onLoad);
+        this.bindAction(FormActions.clear, this.onClear);
     }
 
     onSet(map){
-        console.log("FormStore.onSet: "+JSON.stringify(map));
+        //console.log("FormStore.onSet: "+JSON.stringify(map));
         for (var key in map){
             this.data[key] = map[key];
         }
-        AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(this.data), (error)=>console.log("SAVED"+error));
+        AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(this.data));
     }
 
     onLoad(data){
