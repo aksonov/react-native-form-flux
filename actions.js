@@ -3,7 +3,7 @@ var {alt} = require('react-native-router-flux');
 
 class Actions {
     constructor(){
-        this.generateActions('set','load','clear');
+        this.generateActions('set','clear');
     }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "react-native-form-flux",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Native Form management using Flux architecture ",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
   "readme": "# react-native-form-flux\nUse FLUX events to manage form state and perist it using AsyncStorage.\nAlpha release (in development)",
   "readmeFilename": "README.md",
   "gitHead": "a43d6d78c3da0ea5853c4fb950e787d1a843ea2b",
-  "_id": "react-native-form-flux@0.0.1",
-  "_shasum": "67a79eb2e48a109317581bc073ea0d3e51bb8889",
-  "_from": "react-native-form-flux@>=0.0.1 <0.0.2"
+  "_id": "react-native-form-flux@0.0.2",
+  "_shasum": "48fb4941775fb0349bd81567e0fb79f2899eb894",
+  "_from": "react-native-form-flux@>=0.0.2 <0.0.3"
 }
