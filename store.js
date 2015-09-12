@@ -24,6 +24,9 @@ class FormStore {
     onPageOpened(data){
         this.waitFor(PageStore.dispatchToken);
         this.route = PageStore.getState().currentRoute;
+        if (!this.route){
+            console.error("No current route!");
+        }
 //        console.log("onPageOpened"+JSON.stringify(data)+" route "+ this.route);
         // load data for current route
         this.all[this.route] = {};
@@ -38,12 +41,16 @@ class FormStore {
     onPageClosed(data){
         console.log("onPageClosed"+data+" route "+ this.route);
 
+        // store data for prev route
+        this.onSet(data || {});
+
         // change current route
         this.waitFor(PageStore.dispatchToken);
 
-        // store data for prev route
-        this.onSet(data || {});
         this.route = PageStore.getState().currentRoute;
+        if (!this.route){
+            console.error("No current route!");
+        }
 
         // store data for new current route
         this.onSet(data || {});
@@ -51,17 +58,20 @@ class FormStore {
     }
 
     onSet(map){
+        if (!this.all[this.route]){
+            this.all[this.route]={};
+        }
+        console.log("FormStore.onSet: "+JSON.stringify(map)+" for route:"+this.route+" DATA"+JSON.stringify(this.all[this.route]));
         for (var key in map){
             this.all[this.route][key] = map[key];
         }
-//        console.log("FormStore.onSet: "+JSON.stringify(map)+" for route:"+this.route+" DATA"+JSON.stringify(this.all[this.route]));
         AsyncStorage.setItem(STORAGE_KEY+this.route, JSON.stringify(this.all[this.route]||{}));
         this.setState({data:this.all[this.route]});
     }
 
     onLoad(data){
         if (data) {
-//            console.log("onPageOpened loaded "+data+" route "+ this.route);
+            console.log("onPageOpened loaded "+data+" route "+ this.route);
             data = JSON.parse(data);
             for (var key in data){
                 this.all[this.route][key] = data[key];
